@@ -35,37 +35,39 @@ except Exception as _e:
 def _model(model_name: str = None) -> genai.GenerativeModel:
     return genai.GenerativeModel(model_name or "gemini-2.5-flash-lite")
 
-# Fallback model chain — if one is rate-limited, try the next
+# Fallback model chain — try each once (NO retries to save quota)
 _FALLBACK_MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash"]
 
-def _generate(prompt, retries: int = 2, **kwargs):
-    """Generate content with automatic model fallback and retry on rate limiting."""
-    last_err = None
+def _generate(prompt, **kwargs):
+    """Generate content with model fallback. Each model tried ONCE to conserve daily quota."""
     for model_name in _FALLBACK_MODELS:
-        for attempt in range(retries + 1):
-            try:
-                model = _model(model_name)
-                resp = model.generate_content(prompt, **kwargs)
-                return resp
-            except Exception as e:
-                last_err = e
-                err = str(e)
-                # API key is dead — no point retrying any model
-                if "API_KEY_INVALID" in err or "expired" in err.lower() or "invalid" in err.lower():
-                    raise Exception("❌ API key is invalid or expired. Please generate a new key at https://aistudio.google.com/apikey and update .streamlit/secrets.toml") from e
-                # Rate limited — retry with backoff, then try next model
-                if "429" in err or "ResourceExhausted" in err or "quota" in err.lower():
-                    if attempt < retries:
-                        time.sleep(3 * (attempt + 1))
-                        continue
-                    else:
-                        break  # try next model
-                # Model doesn't exist — try next model
-                elif "404" in err:
-                    break
-                else:
-                    raise e
-    raise Exception(f"All AI models are currently rate-limited. Please wait a minute and try again. Last error: {last_err}")
+        try:
+            model = _model(model_name)
+            resp = model.generate_content(prompt, **kwargs)
+            # Track usage in session state
+            if "api_calls_today" not in st.session_state:
+                st.session_state.api_calls_today = 0
+            st.session_state.api_calls_today += 1
+            return resp
+        except Exception as e:
+            err = str(e)
+            # API key is dead — stop immediately
+            if "API_KEY_INVALID" in err or "expired" in err.lower():
+                raise Exception("❌ API key is invalid or expired. Generate a new one at https://aistudio.google.com/apikey") from e
+            # Rate limited — try next model (no retry, no sleep)
+            if "429" in err or "ResourceExhausted" in err or "quota" in err.lower():
+                continue
+            # Model doesn't exist — try next
+            if "404" in err:
+                continue
+            # Unknown error — raise it
+            raise e
+    # All models exhausted
+    raise Exception(
+        "⏳ Daily free-tier limit reached (25 requests/day). "
+        "The quota resets at midnight Pacific Time (~12:30 PM IST). "
+        "Please try again later or upgrade to a paid plan at https://aistudio.google.com"
+    )
 
 def _safe_json(text: str) -> dict | list | None:
     """Strip markdown fences and parse JSON safely."""
@@ -890,6 +892,13 @@ def render_dashboard():
 
     if not has_resume:
         st.markdown('<div class="smart-alert">⚡ <strong>Get started:</strong> Upload your resume in the <strong>📄 Resume</strong> tab to unlock personalized AI analysis.</div>', unsafe_allow_html=True)
+
+    # Quota usage indicator
+    calls_used = st.session_state.get("api_calls_today", 0)
+    if calls_used >= 20:
+        st.markdown(f'<div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:12px 18px;margin-bottom:16px;color:#f87171;font-size:0.9rem">⚠️ <strong>Daily AI quota nearly exhausted</strong> — {calls_used} calls used this session. Free tier allows ~25/day. Resets at ~12:30 PM IST.</div>', unsafe_allow_html=True)
+    elif calls_used >= 10:
+        st.markdown(f'<div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:12px;padding:12px 18px;margin-bottom:16px;color:#fbbf24;font-size:0.9rem">📊 <strong>API Usage:</strong> {calls_used} calls this session (free limit: ~25/day)</div>', unsafe_allow_html=True)
 
     if has_resume and not has_predict:
         st.markdown('<div class="smart-alert">📊 <strong>Next step:</strong> Go to <strong>📊 Predictor</strong> to see your placement readiness score.</div>', unsafe_allow_html=True)
