@@ -1,8 +1,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Hackathon-Hack%20AI%202.0-blueviolet?style=for-the-badge&logo=hackthebox&logoColor=white" alt="Hack AI 2.0"/>
-  <img src="https://img.shields.io/badge/Team-The%20Renegades-ff6f61?style=for-the-badge&logo=teamspeak&logoColor=white" alt="The Renegades"/>
+  <a href="https://vishant-kataria.github.io/Hack_AI_2.0_project/HTML/team.html"><img src="https://img.shields.io/badge/Team-The%20Renegades-ff6f61?style=for-the-badge&logo=teamspeak&logoColor=white" alt="The Renegades"/></a>
   <img src="https://img.shields.io/badge/Duration-24%20Hours-00c853?style=for-the-badge&logo=clockify&logoColor=white" alt="24 Hours"/>
 </p>
+
 
 <h1 align="center">🚀 Hack AI 2.0 — Team The Renegades</h1>
 
