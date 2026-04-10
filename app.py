@@ -2055,6 +2055,7 @@ body {
 .loading-screen.hidden {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 }
 .loading-logo {
     width: 80px; height: 80px;
@@ -3533,18 +3534,17 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 // ΓÇöΓÇöΓÇö Navigation helper (direct parent URL change) ΓÇöΓÇöΓÇö
 function navigateTo(page) {
+    // Strategy 1: Try direct parent navigation (works if same-origin)
     try {
-        // Try direct parent location change (works if same-origin)
-        window.parent.location.href = window.parent.location.pathname + '?page=' + page;
-    } catch(e) {
-        // Fallback: try top-level navigation
-        try {
-            window.top.location.href = '/?page=' + page;
-        } catch(e2) {
-            // Last resort: postMessage
-            window.parent.postMessage({type: 'streamlit_navigate', page: page}, '*');
-        }
-    }
+        var baseUrl = window.parent.location.origin + window.parent.location.pathname;
+        window.parent.location.href = baseUrl + '?page=' + page;
+        return;
+    } catch(e) {}
+    // Strategy 2: Try top-level navigation
+    try {
+        window.top.location.href = '/?page=' + page;
+        return;
+    } catch(e2) {}
 }
 </script>
 </body>
@@ -3553,7 +3553,20 @@ function navigateTo(page) {
     
     # Render directly using Streamlit components (works on Cloud + Local)
     import streamlit.components.v1 as components
-    components.html(html_content, height=4000, scrolling=False)
+    result = components.html(html_content, height=4000, scrolling=False)
+
+    # Also add native Streamlit buttons as fallback navigation
+    # These appear below the landing page and always work
+    st.markdown("<br>", unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([2, 1, 1])
+    with col2:
+        if st.button("✨ Sign In", key="landing_signin_btn", type="primary", use_container_width=True):
+            st.session_state.show_page = "signin"
+            st.rerun()
+    with col3:
+        if st.button("🚀 Sign Up", key="landing_signup_btn", type="primary", use_container_width=True):
+            st.session_state.show_page = "signup"
+            st.rerun()
 
 
 # -----------------------------------------------------------------
