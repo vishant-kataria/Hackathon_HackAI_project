@@ -2064,11 +2064,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    font-weight: 900;
-    color: white;
     animation: pulse-glow 1.5s ease-in-out infinite;
     box-shadow: 0 0 40px rgba(99,102,241,0.4);
+}
+.loading-logo svg {
+    width: 40px;
+    height: 40px;
 }
 @keyframes pulse-glow {
     0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(99,102,241,0.4); }
@@ -2200,11 +2201,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
-    font-weight: 900;
-    color: white;
     box-shadow: 0 4px 16px rgba(99,102,241,0.4);
     transition: box-shadow 0.3s ease;
+}
+.brand-logo svg {
+    width: 22px;
+    height: 22px;
 }
 .brand-link:hover .brand-logo {
     box-shadow: 0 6px 24px rgba(99,102,241,0.6);
@@ -2994,7 +2996,13 @@ body {
 
 <!-- Loading Screen -->
 <div class="loading-screen" id="loadingScreen">
-    <div class="loading-logo">CF</div>
+    <div class="loading-logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" opacity="0.9"/>
+            <path d="M12 6V14M8 10H16" stroke="rgba(99,102,241,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M7 17L12 14.5L17 17" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+        </svg>
+    </div>
     <div class="loading-bar-track">
         <div class="loading-bar-fill"></div>
     </div>
@@ -3069,40 +3077,40 @@ body {
         </div>
         <div class="features-grid">
             <div class="feature-card" style="--glow-color: rgba(99,102,241,0.4); --glow-color-dim: rgba(99,102,241,0.08);">
-                <div class="feature-icon" style="background: rgba(99,102,241,0.12);">≡ƒÅá</div>
+                <div class="feature-icon" style="background: rgba(99,102,241,0.12);">&#127968;</div>
                 <h3>Smart Dashboard</h3>
-                <p>Track placement readiness, DSA progress, aptitude score, and daily streak ΓÇö all at a glance.</p>
-                <div class="feature-arrow">ΓåÆ</div>
+                <p>Track placement readiness, DSA progress, aptitude score, and daily streak &mdash; all at a glance.</p>
+                <div class="feature-arrow">&rarr;</div>
             </div>
             <div class="feature-card" style="--glow-color: rgba(34,197,94,0.4); --glow-color-dim: rgba(34,197,94,0.08);">
-                <div class="feature-icon" style="background: rgba(34,197,94,0.12);">≡ƒôä</div>
+                <div class="feature-icon" style="background: rgba(34,197,94,0.12);">&#128196;</div>
                 <h3>Resume Analyzer</h3>
-                <p>Upload your resume, get instant AI feedback ΓÇö strengths, weaknesses, missing skills, and tips.</p>
-                <div class="feature-arrow">ΓåÆ</div>
+                <p>Upload your resume, get instant AI feedback &mdash; strengths, weaknesses, missing skills, and tips.</p>
+                <div class="feature-arrow">&rarr;</div>
             </div>
             <div class="feature-card" style="--glow-color: rgba(245,158,11,0.4); --glow-color-dim: rgba(245,158,11,0.08);">
-                <div class="feature-icon" style="background: rgba(245,158,11,0.12);">≡ƒôè</div>
+                <div class="feature-icon" style="background: rgba(245,158,11,0.12);">&#128202;</div>
                 <h3>Placement Predictor</h3>
                 <p>AI predicts your placement probability and gives actionable steps to boost your score.</p>
-                <div class="feature-arrow">ΓåÆ</div>
+                <div class="feature-arrow">&rarr;</div>
             </div>
             <div class="feature-card" style="--glow-color: rgba(167,139,250,0.4); --glow-color-dim: rgba(167,139,250,0.08);">
-                <div class="feature-icon" style="background: rgba(167,139,250,0.12);">≡ƒºá</div>
+                <div class="feature-icon" style="background: rgba(167,139,250,0.12);">&#129504;</div>
                 <h3>Adaptive Learning</h3>
                 <p>Personalized 7-day sprints targeting your weak areas with curated tasks and problems.</p>
-                <div class="feature-arrow">ΓåÆ</div>
+                <div class="feature-arrow">&rarr;</div>
             </div>
             <div class="feature-card" style="--glow-color: rgba(56,189,248,0.4); --glow-color-dim: rgba(56,189,248,0.08);">
-                <div class="feature-icon" style="background: rgba(56,189,248,0.12);">≡ƒñû</div>
+                <div class="feature-icon" style="background: rgba(56,189,248,0.12);">&#129302;</div>
                 <h3>AI Mentor Chat</h3>
                 <p>Chat with your AI career coach for advice on interviews, DSA strategies, and more.</p>
-                <div class="feature-arrow">ΓåÆ</div>
+                <div class="feature-arrow">&rarr;</div>
             </div>
             <div class="feature-card" style="--glow-color: rgba(244,63,94,0.4); --glow-color-dim: rgba(244,63,94,0.08);">
-                <div class="feature-icon" style="background: rgba(244,63,94,0.12);">≡ƒÄñ</div>
+                <div class="feature-icon" style="background: rgba(244,63,94,0.12);">&#127908;</div>
                 <h3>Mock Interviews</h3>
                 <p>Practice with AI-generated technical questions, scored on correctness, clarity, and depth.</p>
-                <div class="feature-arrow">ΓåÆ</div>
+                <div class="feature-arrow">&rarr;</div>
             </div>
         </div>
     </div>
@@ -3534,7 +3542,7 @@ function navigateTo(page) {
 </body>
 </html>
     """
-    # ── CSS: Animated navbar box + dark background + full-width ──
+    # ── CSS: Style the Streamlit columns row AS the navbar box ──
     st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -3546,64 +3554,28 @@ function navigateTo(page) {
     }
     [data-testid="stHeader"] { display: none !important; }
 
-    /* ── Full width container ── */
+    /* ── Full width, small top padding ── */
     .block-container {
         max-width: 100% !important;
-        padding: 0 !important;
+        padding: 12px 24px 0 24px !important;
     }
 
-    /* ── Brand ── */
-    .cf-brand {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-    }
-    .cf-brand-logo {
-        width: 42px; height: 42px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #6366f1, #7c3aed);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.1rem;
-        font-weight: 900;
-        color: white;
-        box-shadow: 0 4px 16px rgba(99,102,241,0.4);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cf-brand-logo:hover {
-        transform: rotate(-5deg) scale(1.1);
-        box-shadow: 0 6px 24px rgba(99,102,241,0.6);
-    }
-    .cf-brand-name {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.55rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #fff, #818cf8);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: -0.5px;
-    }
-
-    /* ── Navbar animated box ── */
-    .cf-navbar-box {
-        background: rgba(15, 20, 35, 0.9);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(99, 102, 241, 0.15);
-        border-radius: 16px;
-        margin: 12px 24px 4px;
-        padding: 14px 32px;
+    /* ── Style the FIRST columns row as navbar box ── */
+    .block-container [data-testid="stHorizontalBlock"]:first-of-type {
+        background: rgba(15, 20, 35, 0.95) !important;
+        backdrop-filter: blur(28px) !important;
+        -webkit-backdrop-filter: blur(28px) !important;
+        border: 1px solid rgba(99, 102, 241, 0.2) !important;
+        border-radius: 20px !important;
+        padding: 22px 40px !important;
+        min-height: 80px !important;
         box-shadow:
-            0 4px 24px rgba(0, 0, 0, 0.4),
-            0 0 40px rgba(99, 102, 241, 0.06),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        animation: navbar-appear 0.7s ease-out;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        z-index: 100;
+            0 8px 32px rgba(0, 0, 0, 0.5),
+            0 0 50px rgba(99, 102, 241, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+        animation: navbar-appear 0.7s ease-out !important;
+        align-items: center !important;
+        margin-bottom: 4px !important;
     }
     @keyframes navbar-appear {
         0% { opacity: 0; transform: translateY(-24px) scale(0.98); }
@@ -3611,17 +3583,51 @@ function navigateTo(page) {
         100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
+    /* ── Brand ── */
+    .cf-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .cf-brand-logo {
+        width: 48px; height: 48px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #6366f1, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(99,102,241,0.45);
+        transition: all 0.3s ease;
+    }
+    .cf-brand-logo:hover {
+        box-shadow: 0 8px 28px rgba(99,102,241,0.6);
+        transform: scale(1.05);
+    }
+    .cf-brand-logo svg {
+        width: 26px;
+        height: 26px;
+    }
+    .cf-brand-name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.65rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #fff, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.5px;
+    }
+
     /* ── Equal-size auth buttons ── */
     button[key*="topbar_signin"],
     button[key*="topbar_signup"] {
-        border-radius: 10px !important;
+        border-radius: 12px !important;
         font-weight: 600 !important;
-        font-size: 0.88rem !important;
-        padding: 10px 24px !important;
-        min-width: 110px !important;
+        font-size: 0.92rem !important;
+        padding: 12px 28px !important;
+        min-width: 120px !important;
+        height: 46px !important;
         transition: all 0.3s ease !important;
         letter-spacing: 0.3px !important;
-        height: 42px !important;
     }
     button[key*="topbar_signin"] {
         background: rgba(255,255,255,0.04) !important;
@@ -3632,7 +3638,6 @@ function navigateTo(page) {
         color: #fff !important;
         border-color: rgba(99,102,241,0.5) !important;
         background: rgba(99,102,241,0.12) !important;
-        transform: translateY(-1px) !important;
     }
     button[key*="topbar_signup"] {
         background: linear-gradient(135deg, #6366f1, #7c3aed) !important;
@@ -3645,25 +3650,23 @@ function navigateTo(page) {
         box-shadow: 0 6px 22px rgba(99,102,241,0.55) !important;
     }
 
-    /* ── Columns alignment ── */
-    [data-testid="stHorizontalBlock"] {
-        align-items: center !important;
-    }
-
     /* ── No gap before iframe ── */
     iframe { margin-top: 0 !important; border: none !important; }
     </style>
     """, unsafe_allow_html=True)
 
-    # ── Navbar box (HTML wrapper) with brand ──
-    st.markdown('<div class="cf-navbar-box">', unsafe_allow_html=True)
-
-    # Single row: Brand left, buttons right
+    # ── Single-row navbar: brand left, buttons right ──
     brand_col, spacer, btn1_col, btn2_col = st.columns([2.5, 5, 1, 1])
     with brand_col:
         st.markdown("""
         <div class="cf-brand">
-            <div class="cf-brand-logo">CF</div>
+            <div class="cf-brand-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" opacity="0.9"/>
+                    <path d="M12 6V14M8 10H16" stroke="rgba(99,102,241,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M7 17L12 14.5L17 17" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                </svg>
+            </div>
             <div class="cf-brand-name">CareerForge</div>
         </div>
         """, unsafe_allow_html=True)
@@ -3675,8 +3678,6 @@ function navigateTo(page) {
         if st.button("Sign Up", key="topbar_signup", type="primary", use_container_width=True):
             st.session_state.show_page = "signup"
             st.rerun()
-
-    st.markdown('</div>', unsafe_allow_html=True)
 
     # ── Landing page HTML (starts immediately below navbar box) ──
     import streamlit.components.v1 as components
