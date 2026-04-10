@@ -3041,14 +3041,14 @@ body {
         </h1>
         <p class="hero-subtitle">
             AI-powered career coaching that adapts to you. Master interviews, build killer resumes,
-            crush DSA, and land your dream job ΓÇö all in one platform.
+            crush DSA, and land your dream job &mdash; all in one platform.
         </p>
         <div class="hero-ctas">
             <button class="cta-primary" onclick="navigateTo('signup')">
-                ≡ƒÜÇ Get Started Free
+                &#128640; Get Started Free
             </button>
             <button class="cta-secondary" onclick="navigateTo('signin')">
-                Sign In ΓåÆ
+                Sign In &rarr;
             </button>
         </div>
 
@@ -3126,7 +3126,7 @@ body {
             <div class="step-item">
                 <div class="step-num" style="background: linear-gradient(135deg, #6366f1, #818cf8); box-shadow: 0 6px 24px rgba(99,102,241,0.3);">1</div>
                 <h3>Create Your Profile</h3>
-                <p>Sign up and tell us your career goal ΓÇö SDE, Data Science, Product, or more.</p>
+                <p>Sign up and tell us your career goal &mdash; SDE, Data Science, Product, or more.</p>
             </div>
             <div class="step-item">
                 <div class="step-num" style="background: linear-gradient(135deg, #22c55e, #4ade80); box-shadow: 0 6px 24px rgba(34,197,94,0.3);">2</div>
@@ -3149,23 +3149,23 @@ body {
             <p>Your personalized dashboard gives you real-time insights into every aspect of your career preparation journey.</p>
             <ul class="demo-features">
                 <li>
-                    <span class="check-icon">Γ£ô</span>
+                    <span class="check-icon">&#10004;</span>
                     Real-time placement score tracking
                 </li>
                 <li>
-                    <span class="check-icon">Γ£ô</span>
+                    <span class="check-icon">&#10004;</span>
                     AI-generated personalized study plans
                 </li>
                 <li>
-                    <span class="check-icon">Γ£ô</span>
+                    <span class="check-icon">&#10004;</span>
                     Mock interview with instant feedback
                 </li>
                 <li>
-                    <span class="check-icon">Γ£ô</span>
+                    <span class="check-icon">&#10004;</span>
                     Resume analysis against industry standards
                 </li>
                 <li>
-                    <span class="check-icon">Γ£ô</span>
+                    <span class="check-icon">&#10004;</span>
                     Progress tracking with visual analytics
                 </li>
             </ul>
@@ -3236,7 +3236,7 @@ body {
         <div style="overflow:hidden;">
             <div class="testimonials-track">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"CareerForge helped me crack my Google interview. The adaptive learning path targeted exactly what I needed."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#6366f1,#818cf8);">AK</div>
@@ -3247,7 +3247,7 @@ body {
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"The mock interview feature is incredible. Real-time feedback on my answers boosted my confidence 10x."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#22c55e,#4ade80);">PR</div>
@@ -3258,7 +3258,7 @@ body {
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"From 45% to 88% placement score in 3 weeks. The AI mentor chat is like having a personal career coach 24/7."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">SM</div>
@@ -3269,7 +3269,7 @@ body {
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"Best career prep tool I've used. The resume analyzer found gaps I never noticed and helped me fix them fast."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f43f5e,#fb7185);">VK</div>
@@ -3280,7 +3280,7 @@ body {
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"The consistency tracking and daily streaks kept me motivated throughout my placement prep season."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#06b6d4,#22d3ee);">NP</div>
@@ -3292,7 +3292,7 @@ body {
                 </div>
                 <!-- Duplicate for seamless loop -->
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"CareerForge helped me crack my Google interview. The adaptive learning path targeted exactly what I needed."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#6366f1,#818cf8);">AK</div>
@@ -3303,7 +3303,7 @@ body {
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"The mock interview feature is incredible. Real-time feedback on my answers boosted my confidence 10x."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#22c55e,#4ade80);">PR</div>
@@ -3314,7 +3314,7 @@ body {
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
+                    <div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
                     <div class="testimonial-text">"From 45% to 88% placement score in 3 weeks. The AI mentor chat is like having a personal career coach 24/7."</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">SM</div>
@@ -3334,13 +3334,13 @@ body {
         <h2>Ready to Forge Your Future?</h2>
         <p>Join hundreds of students already using CareerForge to land their dream jobs.</p>
         <button class="cta-primary" style="font-size: 1.1rem; padding: 18px 44px;" onclick="navigateTo('signup')">
-            ≡ƒöÑ Start Your Journey Now
+            &#128273; Start Your Journey Now
         </button>
     </div>
 
     <!-- FOOTER -->
     <div class="page-footer">
-        Built with Γ¥ñ∩╕Å by Team Renegades  ΓÇó  Hack AI 2.0
+        Built with &#10084;&#65039; by Team Renegades &middot; Hack AI 2.0
     </div>
 </div>
 
